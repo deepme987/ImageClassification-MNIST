@@ -1,19 +1,17 @@
 # ImageClassification
 Image Classification using Flask and Tensorflow
 
-To clone the repository: `> git clone https://github.com/deepme987/ImageClassification.git`
-
 ## Required Libraries:
 flask
 tensorflow
 matplotlib
 numpy
 	
-### How to play:
+### How to use the Image Classification:
 
 **1. Clone the repository to your directory:**
 
-&nbsp;&nbsp; `git clone -https://github.com/deepme987/TicTacToe.git`
+&nbsp;&nbsp; `git clone https://github.com/deepme987/ImageClassification.git`
  
 **2. Install the required libraries:**
   
