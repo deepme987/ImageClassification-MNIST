@@ -23,4 +23,4 @@ numpy
 
 &nbsp;&nbsp; `python runner.py`
 
-**4. Upload an image and get instant results:**
+**4. Upload an image and get instant results**
