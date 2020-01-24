@@ -1,4 +1,3 @@
-
 import os
 from flask import Flask, request, redirect, url_for, flash, send_from_directory
 from werkzeug.utils import secure_filename
@@ -7,11 +6,11 @@ import numpy as np
 import matplotlib.image as mpimg
 from tensorflow.keras.models import load_model
 
-UPLOAD_FOLDER = 'E:\\Deep\\ImageClassification\\flask_uploads'
+UPLOAD_FOLDER = 'E:/Deep/ImageClassification/Static/'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-model = load_model("Models/mnist.pickle.h5")
+model = load_model("Models/mnist.h5")
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='C:\\Some\\Directory')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
@@ -26,12 +25,12 @@ def rgb2gray(rgb):
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
-    img = mpimg.imread(filename)
+    path = UPLOAD_FOLDER + filename
+    img = mpimg.imread(path)
     gray = rgb2gray(img)
     img = gray.reshape((1, 28, 28, 1))
     pred = np.argmax(model.predict([img]))
-    return '<!doctype html><img width="100" height="100" src="' + str(filename) + '">' \
-           + '<br><input type="button" value="' + str(pred) + '" disabled>'
+    return '<!doctype html><input type="label" value="Result: "><input type="label" value="' + str(pred) + '" disabled>'
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -64,4 +63,4 @@ def upload_file():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
