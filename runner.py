@@ -5,12 +5,13 @@ from werkzeug.utils import secure_filename
 import numpy as np
 import matplotlib.image as mpimg
 from tensorflow.keras.models import load_model
+import cv2
 
 UPLOAD_FOLDER = 'E:/Deep/ImageClassification/Static/'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 model = load_model("Models/mnist.h5")
 
-app = Flask(__name__, static_folder='C:\\Some\\Directory')
+app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
@@ -28,9 +29,10 @@ def uploaded_file(filename):
     path = UPLOAD_FOLDER + filename
     img = mpimg.imread(path)
     gray = rgb2gray(img)
+    gray = cv2.resize(gray, (28, 28))
     img = gray.reshape((1, 28, 28, 1))
     pred = np.argmax(model.predict([img]))
-    return '<!doctype html><input type="label" value="Result: "><input type="label" value="' + str(pred) + '" disabled>'
+    return '<!doctype html><input type="label" value="Result: "><input type="label" value="' + str(pred) + '">'
 
 
 @app.route('/', methods=['GET', 'POST'])
