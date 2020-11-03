@@ -1,13 +1,14 @@
 import os
-from flask import Flask, request, redirect, url_for, flash, send_from_directory
-from werkzeug.utils import secure_filename
-
+import cv2
 import numpy as np
 import matplotlib.image as mpimg
 from tensorflow.keras.models import load_model
-import cv2
 
-UPLOAD_FOLDER = 'E:/Deep/ImageClassification/Static/'
+from flask import Flask, request, redirect, url_for, flash, send_from_directory
+from werkzeug.utils import secure_filename
+
+
+UPLOAD_FOLDER = 'static/'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 model = load_model("Models/mnist.h5")
 
