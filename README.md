@@ -30,6 +30,6 @@ Sample Image:
     
 **3. Once all the files are ready, run the flask on localhost:**
 
-&nbsp;&nbsp; `python runner.py`
+&nbsp;&nbsp; `python app.py`
 
 **4. Upload an image and get instant results**
