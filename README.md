@@ -6,6 +6,10 @@ You can find the notebooks under [Jupyter](https://github.com/deepme987/ImageCla
 
 *If you would like to try the model on-the-fly, visit [here](Link to be added)*
 
+Sample Image:
+
+![Sample](Images/Result.png "Sample")
+
 ---
 ## Required Libraries:
 - flask
