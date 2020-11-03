@@ -33,3 +33,8 @@ Sample Image:
 &nbsp;&nbsp; `python app.py`
 
 **4. Upload an image and get instant results**
+
+---
+
+*You are free to integrate the code in your application. 
+However, if you're resharing your application, I would appreciate if you link the repository and provide credits :)*
