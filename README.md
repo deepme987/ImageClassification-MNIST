@@ -10,7 +10,7 @@ Sample Image:
 
 ![Sample](Images/Result.png "Sample")
 
----
+
 ## Required Libraries:
 - flask
 - tensorflow
